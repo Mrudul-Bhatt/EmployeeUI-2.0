@@ -1,0 +1,33 @@
+<br />
+<div class="container">
+  <h1>Departments</h1>
+  <table
+    *ngIf="departments && departments.length > 0"
+    class="table table-hover"
+  >
+    <thead>
+      <tr>
+        <th>Department Id</th>
+        <th>Department Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let department of departments">
+        <td>{{ department.departmentId }}</td>
+        <td>{{ department.departmentName }}</td>
+        <td>
+          <button class="btn btn-primary btn-sm" type="button">
+            <a
+              style="color: aliceblue"
+              [routerLink]="['../edit-department', department.departmentId]"
+            >
+              View
+            </a>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- <h1 *ngIf="departments.length === 0">No departments found...!</h1> -->
+</div>

@@ -1,0 +1,38 @@
+<br />
+<div class="container">
+  <h1>Employees</h1>
+  <table *ngIf="employees && employees.length > 0" class="table table-hover">
+    <thead>
+      <tr>
+        <th>Employee Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>DOB</th>
+        <th>Age</th>
+        <th>Department Name</th>
+        <th>Options</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{ employee.employeeName }}</td>
+        <td>{{ employee.email }}</td>
+        <td>{{ employee.phone }}</td>
+        <td>{{ employee.dateOfBirth }}</td>
+        <td>{{ employee.age }}</td>
+        <td>{{ employee.departmentName }}</td>
+        <td>
+          <button class="btn btn-primary btn-sm" type="button">
+            <a
+              style="color: aliceblue"
+              [routerLink]="['../edit-employee', employee.employeeId]"
+            >
+              View
+            </a>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- <h1 *ngIf="departments.length === 0">No departments found...!</h1> -->
+</div>
