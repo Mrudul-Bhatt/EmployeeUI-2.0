@@ -1,0 +1,82 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand" routerLink="">
+      <img
+        style="color: aliceblue"
+        width="10%"
+        height="10%"
+        src="../assets/multiple-users-silhouette.png"
+      />
+    </a>
+    <!-- <div class="collapse navbar-collapse" id="navbarNav"> -->
+    <ul class="navbar-nav" *ngIf="authenticated">
+      <li class="nav-item">
+        <a
+          routerLink="/employees"
+          routerLinkActive="active"
+          class="nav-link"
+          style="font-size: larger"
+          >Employees</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          routerLink="/add-employee"
+          routerLinkActive="active"
+          class="nav-link"
+          style="font-size: larger"
+          >Add Employees</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          routerLink="/departments"
+          routerLinkActive="active"
+          class="nav-link"
+          style="font-size: larger"
+          >Departments</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          routerLink="/add-department"
+          routerLinkActive="active"
+          class="nav-link"
+          style="font-size: larger"
+          >Add Department</a
+        >
+      </li>
+      <li class="nav-item">
+        <button
+          (click)="logout()"
+          type="button"
+          class="btn btn-dark"
+          style="font-size: larger"
+        >
+          Logout
+        </button>
+      </li>
+    </ul>
+    <ul class="navbar-nav" *ngIf="!authenticated">
+      <li class="nav-item">
+        <a
+          routerLink="/login"
+          routerLinkActive="active"
+          class="nav-link"
+          style="font-size: larger"
+          >Login</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          routerLink="/register"
+          routerLinkActive="active"
+          class="nav-link"
+          style="font-size: larger"
+          >Register</a
+        >
+      </li>
+    </ul>
+    <!-- </div> -->
+  </div>
+</nav>

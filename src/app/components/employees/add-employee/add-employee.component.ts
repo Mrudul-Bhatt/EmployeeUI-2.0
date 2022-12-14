@@ -29,6 +29,13 @@ export class AddEmployeeComponent implements OnInit {
   };
 
   ngOnInit(): void {
+    var token = localStorage.getItem('token');
+
+    if (!token) {
+      this.router.navigate(['/login']);
+      return;
+    }
+
     this.departmentsService.getAllDepartments().subscribe({
       next: (departments) => {
         console.log(departments);

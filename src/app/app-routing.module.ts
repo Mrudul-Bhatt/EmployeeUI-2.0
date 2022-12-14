@@ -7,6 +7,9 @@ import { AddEmployeeComponent } from './components/employees/add-employee/add-em
 import { EditEmployeeComponent } from './components/employees/edit-employee/edit-employee.component';
 import { EmployeesListComponent } from './components/employees/employees-list/employees-list.component';
 import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { AuthGuardService as AuthGuard } from './services/auth-guard.service';
 
 const routes: Routes = [
   {
@@ -37,6 +40,15 @@ const routes: Routes = [
     path: 'edit-employee/:id',
     component: EditEmployeeComponent,
   },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
+  },
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({

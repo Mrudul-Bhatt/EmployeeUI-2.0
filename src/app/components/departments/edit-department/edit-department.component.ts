@@ -21,6 +21,13 @@ export class EditDepartmentComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    var token = localStorage.getItem('token');
+
+    if (!token) {
+      this.router.navigate(['/login']);
+      return;
+    }
+
     this.route.paramMap.subscribe({
       next: (params) => {
         const id = params.get('id');

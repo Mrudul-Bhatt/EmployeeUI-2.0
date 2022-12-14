@@ -19,7 +19,14 @@ export class AddDepartmentComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    var token = localStorage.getItem('token');
+
+    if (!token) {
+      this.router.navigate(['/login']);
+      return;
+    }
+  }
 
   addDepartment() {
     console.log(this.addDepartmentRequest);
